@@ -1,11 +1,16 @@
 package com.akashsoam.onlinestoreapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.android.volley.Request
+import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 
 class CartProductsActivity : AppCompatActivity() {
@@ -46,5 +51,36 @@ class CartProductsActivity : AppCompatActivity() {
             { error -> }
         )
         requestQ.add(jsonAR)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.cart_menu, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.continueShoppingItems) {
+            val intent = Intent(this@CartProductsActivity, HomeScreen::class.java)
+            startActivity(intent)
+        } else if (item.itemId == R.id.verifyOrderItem) {
+
+        } else if (item.itemId == R.id.declineOrderItem) {
+            val deleteUrl =
+                "http://192.168.42.198/OnlineStoreApp/delete_order.php?email=${Person.email}"
+            val requestQ = Volley.newRequestQueue(this@CartProductsActivity)
+            val stringRequest = StringRequest(
+                Request.Method.GET,
+                deleteUrl,
+                { response ->
+                    val intent = Intent(this@CartProductsActivity, HomeScreen::class.java)
+                    startActivity(intent)
+                },
+                { error -> }
+            )
+            requestQ.add((stringRequest))
+
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

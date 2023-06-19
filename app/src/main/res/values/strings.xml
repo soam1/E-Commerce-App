@@ -13,4 +13,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_amount">Enter amount...</string>
+    <string name="continue_shopping">Continue Shopping</string>
+    <string name="verify_order_item">Verify Order Item</string>
+    <string name="decline_order_item">Decline Order Item</string>
 </resources>

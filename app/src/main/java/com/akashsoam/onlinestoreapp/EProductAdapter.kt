@@ -1,9 +1,11 @@
 package com.akashsoam.onlinestoreapp
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -31,7 +33,10 @@ class EProductAdapter(var context: Context, var arrayList: ArrayList<EProduct>) 
     }
 
     inner class ProductViewHolder(myView: View) : RecyclerView.ViewHolder(myView) {
+        var imageAddButton:ImageView = myView.findViewById(R.id.imgAddProduct)
+
         var imageProduct: ImageView = myView.findViewById(R.id.imgProduct)
+
         var txtId: TextView = myView.findViewById(R.id.txtId)
         var txtName: TextView = myView.findViewById(R.id.txtName)
         var txtPrice: TextView = myView.findViewById(R.id.txtPrice)
@@ -45,6 +50,13 @@ class EProductAdapter(var context: Context, var arrayList: ArrayList<EProduct>) 
 
             Picasso.get().load(picUrl + picName).into(imageProduct)
 
+            imageAddButton.setOnClickListener {
+
+                Person.addToCartProductID = id
+                var amountFragment = AmountFragment()
+                var fragmentManager = (itemView.context as Activity).fragmentManager
+                amountFragment.show(fragmentManager, "TAG", )
+            }
         }
 
     }

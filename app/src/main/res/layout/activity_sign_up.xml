@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80ff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgSignUp"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/signup" />
+
+
+    <EditText
+        android:id="@+id/edtSignupEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableEnd="@drawable/email"
+        android:ems="12"
+        android:hint="@string/please_enter_an_email_address"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:textColor="#fff" />
+
+    <EditText
+        android:id="@+id/edtSignupUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableEnd="@drawable/username"
+        android:ems="12"
+        android:hint="@string/please_enter_an_username"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColor="#fff" />
+
+    <EditText
+        android:id="@+id/edtSignUpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableEnd="@drawable/password"
+        android:ems="12"
+        android:hint="@string/please_enter_the_password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textColor="#fff" />
+
+    <EditText
+        android:id="@+id/edtSignUpConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableEnd="@drawable/confirm_password"
+        android:ems="12"
+        android:hint="@string/please_re_enter_the_password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ff2"
+        android:textColor="@color/black"
+        android:text="@string/signup"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btnSignUpLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#aa1"
+        android:text="@string/login"
+        android:textSize="30sp" />
+
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Online Store App</string>
+    <string name="please_enter_an_email_address">Please enter an email address...</string>
+    <string name="please_enter_the_password">Please enter the password...</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="please_enter_an_username">Please enter an username</string>
+    <string name="please_re_enter_the_password">Please re-enter the password..</string>
+</resources>

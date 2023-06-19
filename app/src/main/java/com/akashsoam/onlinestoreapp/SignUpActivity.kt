@@ -36,7 +36,7 @@ class SignUpActivity : AppCompatActivity() {
             if (edtSignUpPassword.text.toString() == edtSignUpConfirmPassword.text.toString()) {
 //                todo:registration process
                 val signUpUrl: String =
-                    "https://192.168.42.198//OnlineStoreApp/join_new_user.php?email=" + edtSignUpEmail.text.toString() +
+                    "http://192.168.42.198//OnlineStoreApp/join_new_user.php?email=" + edtSignUpEmail.text.toString() +
                             "&username=" + edtSignUpUsername.text.toString() + "&pass=" + edtSignUpPassword.text.toString()
                 val requestQ: RequestQueue = Volley.newRequestQueue(this@SignUpActivity)
 

@@ -6,4 +6,8 @@
     <string name="signup">SignUp</string>
     <string name="please_enter_an_username">Please enter an username</string>
     <string name="please_re_enter_the_password">Please re-enter the password..</string>
+    <string name="please_choose_a_brand">Please Choose a brand</string>
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="id">id</string>
 </resources>

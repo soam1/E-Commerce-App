@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                         dialogBuilder.setTitle("Info").setIcon(R.drawable.info)
                             .setMessage(response).create()
                             .show()
+
                         val homeIntent = Intent(this@MainActivity, HomeScreen::class.java)
                         startActivity(homeIntent)
                     }

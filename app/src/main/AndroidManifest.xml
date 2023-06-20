@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FinalizeShoppingActivity"
+            android:exported="false" />
+        <activity
             android:name=".CartProductsActivity"
             android:exported="false" />
         <activity
@@ -23,9 +26,7 @@
             android:exported="false" />
         <activity
             android:name=".HomeScreen"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />

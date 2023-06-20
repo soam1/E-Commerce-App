@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
@@ -64,6 +65,22 @@ class CartProductsActivity : AppCompatActivity() {
             val intent = Intent(this@CartProductsActivity, HomeScreen::class.java)
             startActivity(intent)
         } else if (item.itemId == R.id.verifyOrderItem) {
+            val verifyOrderUrl =
+                "http://192.168.42.198/OnlineStoreApp/verify_order.php?email=${Person.email}"
+            val requestQ = Volley.newRequestQueue(this@CartProductsActivity)
+            val stringRequest = StringRequest(
+                Request.Method.GET,
+                verifyOrderUrl,
+                { response ->
+                    val intent =
+                        Intent(this@CartProductsActivity, FinalizeShoppingActivity::class.java)
+                    Toast.makeText(this@CartProductsActivity, response, Toast.LENGTH_LONG).show();
+                    intent.putExtra("LATEST_INVOICE_NUMBER", response)
+                    startActivity(intent)
+                },
+                { error -> }
+            )
+            requestQ.add((stringRequest))
 
         } else if (item.itemId == R.id.declineOrderItem) {
             val deleteUrl =
@@ -74,6 +91,7 @@ class CartProductsActivity : AppCompatActivity() {
                 deleteUrl,
                 { response ->
                     val intent = Intent(this@CartProductsActivity, HomeScreen::class.java)
+                    Toast.makeText(this@CartProductsActivity, response, Toast.LENGTH_SHORT).show();
                     startActivity(intent)
                 },
                 { error -> }
